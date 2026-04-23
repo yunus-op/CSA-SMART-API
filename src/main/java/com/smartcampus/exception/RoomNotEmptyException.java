@@ -1,15 +1,14 @@
 package com.smartcampus.exception;
 
+/**
+ * Custom exception thrown when attempting to delete a Room that still has
+ * active Sensors assigned to it.
+ * 
+ * Mapped to HTTP 409 Conflict by RoomNotEmptyExceptionMapper.
+ */
 public class RoomNotEmptyException extends RuntimeException {
 
-    private final String roomId;
-
-    public RoomNotEmptyException(String roomId) {
-        super("Room " + roomId + " still has sensors assigned to it");
-        this.roomId = roomId;
-    }
-
-    public String getRoomId() {
-        return roomId;
+    public RoomNotEmptyException(String message) {
+        super(message);
     }
 }

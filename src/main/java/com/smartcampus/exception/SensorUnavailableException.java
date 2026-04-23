@@ -1,17 +1,15 @@
 package com.smartcampus.exception;
 
+/**
+ * Thrown when a client attempts to POST a new reading to a Sensor
+ * whose status is "MAINTENANCE" — meaning it is physically disconnected
+ * and cannot accept new readings.
+ *
+ * Mapped to HTTP 403 Forbidden by SensorUnavailableExceptionMapper.
+ */
 public class SensorUnavailableException extends RuntimeException {
 
-    private final String sensorId;
-    private final String status;
-
-    public SensorUnavailableException(String sensorId, String status) {
-        super("Sensor " + sensorId + " is currently " + status
-                + " and cannot accept new readings");
-        this.sensorId = sensorId;
-        this.status = status;
+    public SensorUnavailableException(String message) {
+        super(message);
     }
-
-    public String getSensorId() { return sensorId; }
-    public String getStatus() { return status; }
 }
