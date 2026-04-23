@@ -1,17 +1,14 @@
 package com.smartcampus.exception;
 
+/**
+ * Thrown when a client attempts to POST a new Sensor with a roomId
+ * that does not reference any existing Room in the system.
+ *
+ * Mapped to HTTP 422 Unprocessable Entity by LinkedResourceNotFoundExceptionMapper.
+ */
 public class LinkedResourceNotFoundException extends RuntimeException {
 
-    private final String resourceType;
-    private final String resourceId;
-
-    public LinkedResourceNotFoundException(
-            String resourceType, String resourceId) {
-        super(resourceType + " not found with ID: " + resourceId);
-        this.resourceType = resourceType;
-        this.resourceId = resourceId;
+    public LinkedResourceNotFoundException(String message) {
+        super(message);
     }
-
-    public String getResourceType() { return resourceType; }
-    public String getResourceId() { return resourceId; }
 }
