@@ -1,20 +1,23 @@
 package com.smartcampus.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
+/**
+ * POJO representing a sensor device deployed on the Smart Campus.
+ * Each sensor is linked to a Room via its roomId foreign key.
+ */
 public class Sensor {
 
-    private String id;
-    private String type;
-    private String status;
-    private double currentValue;
-    private String roomId;
+    private String id;              // Unique identifier, e.g., "TEMP-001"
+    private String type;            // Category: "Temperature", "Occupancy", "CO2"
+    private String status;          // Current state: "ACTIVE", "MAINTENANCE", or "OFFLINE"
+    private double currentValue;    // The most recent measurement recorded
+    private String roomId;          // Foreign key linking to the Room
 
-    public Sensor() {}
+    // Default constructor (required for JSON deserialization)
+    public Sensor() {
+    }
 
-    public Sensor(String id, String type, String status,
-                  double currentValue, String roomId) {
+    // Parameterized constructor
+    public Sensor(String id, String type, String status, double currentValue, String roomId) {
         this.id = id;
         this.type = type;
         this.status = status;
@@ -22,24 +25,45 @@ public class Sensor {
         this.roomId = roomId;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    // --- Getters and Setters ---
 
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
+    public String getId() {
+        return id;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    public double getCurrentValue() { return currentValue; }
-    public void setCurrentValue(double currentValue) { this.currentValue = currentValue; }
+    public String getType() {
+        return type;
+    }
 
-    public String getRoomId() { return roomId; }
-    public void setRoomId(String roomId) { this.roomId = roomId; }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    @Override
-    public String toString() {
-        return "Sensor{id='" + id + "', type='" + type
-                + "', status='" + status + "'}";
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getCurrentValue() {
+        return currentValue;
+    }
+
+    public void setCurrentValue(double currentValue) {
+        this.currentValue = currentValue;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
     }
 }
