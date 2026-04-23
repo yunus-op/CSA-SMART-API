@@ -1,6 +1,30 @@
 # Smart Campus — Sensor & Room Management API
 
-> **Module:** Client-Server Architectures | **Stack:** JAX-RS (Jersey 2.39.1) + Grizzly + Jackson | **Java 11**
+## Student Information
+
+| Field | Details                                           |
+|-------|---------------------------------------------------|
+| Name | M.R.Yunus Ahmed                                   |
+| Module | 5COSC022W — Client-Server Architectures           |
+| University ID | w2120132                                          |
+| GitHub Repo | https://github.com/yunus-op/CSA-SMART-API |
+| Submission Date | 24 April 2026                                     |
+
+---
+A RESTful API built with JAX-RS (Jersey) and Grizzly for managing rooms and
+sensors across a university smart campus.
+---
+## Technology Stack
+- Java 11
+- JAX-RS (Jersey 2.35)
+- Grizzly HTTP Server
+- Jackson (JSON)
+- Maven
+
+## API Base URL
+```
+http://localhost:8080/api/v1
+```
 
 A robust, scalable RESTful API for managing campus rooms and sensors, built as part of the "Smart Campus" initiative. The API manages thousands of Rooms and diverse Sensors (CO2, Temperature, Occupancy) via a clean hypermedia-driven interface.
 
